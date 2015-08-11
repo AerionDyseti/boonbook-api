@@ -100,6 +100,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BoonController.cs" />
+    <Compile Include="Controllers\CharactersController.cs" />
     <Compile Include="Factories\ViewModelFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

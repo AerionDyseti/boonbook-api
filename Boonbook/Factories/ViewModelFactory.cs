@@ -12,7 +12,7 @@ namespace Boonbook.Factories
 
         // Players
 
-        public static PlayerSummaryViewModel UserSummary(Player user)
+        public static PlayerSummaryViewModel PlayerSummary(Player user)
         {
             return new PlayerSummaryViewModel
             {
@@ -41,7 +41,17 @@ namespace Boonbook.Factories
 
         public static CharacterDetailViewModel CharacterDetail(Character character)
         {
-            return new CharacterDetailViewModel();
+            return new CharacterDetailViewModel()
+            {
+                Id = character.Id,
+                Name = character.Name,
+                Player = PlayerSummary(character.Player),
+                Clan = character.Clan.Name,
+                Sect = character.Sect.Name,
+                SocialClass = character.SocialClass.Name,
+                StartDate = character.StartDate.ToString(),
+                RetireDate = character.RetireDate.ToString()
+            };
         }
 
 
@@ -61,7 +71,19 @@ namespace Boonbook.Factories
 
         public static BoonDetailViewModel BoonDetail(Boon boon)
         {
-            return new BoonDetailViewModel();
+            return new BoonDetailViewModel()
+            {
+                Id = boon.Id,
+                Level = boon.Level.Name,
+                Registrar = CharacterSummary(boon.Registrar),
+                Creditor = CharacterSummary(boon.Creditor),
+                Debtor = CharacterSummary(boon.Debtor),
+                RegistrationCause = boon.RegistrationCause,
+                RegistrationDate = boon.RegistrationDate.ToString(),
+                ExpenditureCause = boon.ExpenditureCause,
+                ExpenditureDate = boon.ExpenditureDate.ToString(),
+                Stipulations = boon.Stipulations
+            };
         }
 
     }

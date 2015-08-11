@@ -8,6 +8,6 @@ namespace Boonbook.Models.Characters.ViewModels
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public string Url => "api/characters/" + Id;
+        public string Url => "/api/characters/" + Id;
     }
 }

@@ -10,6 +10,6 @@ namespace Boonbook.Models.Users.ViewModels
         public string MesNumber { get; set; }
         public string Name { get; set; }
 
-        public string Url => "api/players/" + MesNumber;
+        public string Url => "/api/players/" + MesNumber;
     }
 }

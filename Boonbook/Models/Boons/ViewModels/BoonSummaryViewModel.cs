@@ -12,6 +12,6 @@ namespace Boonbook.Models.Boons.ViewModels
 
         public string Level { get; set; }
 
-        public string Url => "api/boons/" + Id;
+        public string Url => "/api/boons/" + Id;
     }
 }
